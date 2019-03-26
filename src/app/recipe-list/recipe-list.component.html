@@ -1,9 +1,14 @@
 <h1>Recipes</h1>
 
-<div *ngFor="let recipe of recipes" (click)='onSelect(recipe)'>
-  <h2>{{recipe.name}}</h2>
-  <!-- <p *ngIf='recipe === selectedRecipe'>{{recipe.description}}</p> -->
-  <app-recipe-detail *ngIf="selectedRecipe === recipe" [recipe]="selectedRecipe"></app-recipe-detail>
-</div>
+<div class="grid-container">
 
+  <div class="recipe-list">
+    <div *ngFor="let recipe of recipes" (click)='onSelect(recipe)'>
+      <h2>{{recipe.name}}</h2>
+    </div>
+  </div>
+
+  <app-recipe-detail class="recipe-detail" [recipe]="selectedRecipe"></app-recipe-detail>
+</div>
+<!-- <p *ngIf='recipe === selectedRecipe'>{{recipe.description}}</p> -->
 <!-- <app-recipe [recipe]="selectedRecipe"></app-recipe> -->
